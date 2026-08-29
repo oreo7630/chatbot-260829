@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>오늘의 뉴스 챗봇</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="news-panel">
+      <h1>오늘의 뉴스</h1>
+      <ul class="news-list">
+        {% for a in articles %}
+        <li>
+          <a href="{{ a.link }}" target="_blank" rel="noopener">{{ a.title }}</a>
+          <span class="meta">{{ a.source }} · {{ a.published }}</span>
+        </li>
+        {% else %}
+        <li class="empty">오늘 수집된 뉴스가 없습니다.</li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <main class="chat-panel">
+      <div id="chat-log" class="chat-log">
+        <div class="message bot">
+          안녕하세요! 오늘의 뉴스에 대해 무엇이든 물어보세요. 예) "오늘 뉴스 요약해줘", "경제 관련 소식 있어?"
+        </div>
+      </div>
+      <form id="chat-form" class="chat-form">
+        <input id="chat-input" type="text" placeholder="메시지를 입력하세요" autocomplete="off" required />
+        <button type="submit">전송</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

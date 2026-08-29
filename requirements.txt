@@ -1,2 +1,4 @@
-streamlit
+flask
 openai
+feedparser
+python-dotenv

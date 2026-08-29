@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Apple SD Gothic Neo", sans-serif;
+  background: #f4f5f7;
+  color: #1f2328;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.news-panel {
+  width: 320px;
+  background: #fff;
+  border-right: 1px solid #e2e4e8;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.news-panel h1 {
+  font-size: 18px;
+  margin: 0 0 16px;
+}
+
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-list li {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.news-list a {
+  color: #1f2328;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+  display: block;
+}
+
+.news-list a:hover {
+  color: #2563eb;
+}
+
+.news-list .meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #8a8f98;
+}
+
+.news-list .empty {
+  color: #8a8f98;
+  font-size: 14px;
+}
+
+.chat-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-log {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  max-width: 640px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.message.bot {
+  background: #fff;
+  border: 1px solid #e2e4e8;
+  align-self: flex-start;
+}
+
+.message.user {
+  background: #2563eb;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.message.error {
+  background: #fee2e2;
+  color: #b91c1c;
+  align-self: flex-start;
+}
+
+.chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid #e2e4e8;
+  background: #fff;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #d0d3d9;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.chat-form button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.chat-form button:disabled {
+  background: #9db8f0;
+  cursor: not-allowed;
+}
